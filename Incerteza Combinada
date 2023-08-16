@@ -1,0 +1,13 @@
+Function INCOMB(medidas As Range, qtd, incerteza_inst As Double) As Double
+    Dim stdev As Double
+    Dim quantity As Double
+    
+    ' Calculate standard deviation
+    stdev = WorksheetFunction.StDevA(medidas)
+    
+    ' Calculate the quantity of measurements raised to the power of 0.5
+    quantity = sqrt(qtd)
+    
+    ' Calculate the result using the formula
+    INCOMB = sqrt((stdev / quantity) ^ 2 + incerteza_inst ^ 2)
+End Function
